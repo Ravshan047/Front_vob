@@ -10,7 +10,20 @@ const NewsCard = ({ news }: Props) => {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <img src={news.image} alt="Yangilik rasmi" className="w-full h-48 object-cover" />
+      {news.video ? (
+        <video
+          src={news.video}
+          controls
+          className="w-full h-48 object-cover"
+        />
+      ) : news.image ? (
+        <img
+          src={news.image}
+          alt="Yangilik rasmi"
+          className="w-full h-48 object-cover"
+        />
+      ) : null}
+
       <div className="p-4">
         <h2 className="text-lg font-semibold mb-2">
           {language === 'uz' ? news.titleUz : news.titleRu}
@@ -18,7 +31,9 @@ const NewsCard = ({ news }: Props) => {
         <p className="text-gray-600 text-sm">
           {language === 'uz' ? news.contentUz : news.contentRu}
         </p>
-        <p className="text-xs text-gray-400 mt-2">{new Date(news.date).toLocaleDateString()}</p>
+        <p className="text-xs text-gray-400 mt-2">
+          {new Date(news.date).toLocaleDateString()}
+        </p>
       </div>
     </div>
   );

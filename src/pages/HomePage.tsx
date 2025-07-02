@@ -1,3 +1,4 @@
+// importlar o‘zgarmaydi
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -28,7 +29,7 @@ const HomePage = () => {
 
   // Eng so‘nggi 3 ta yangilikni olish
   const latestNews = [...newsList]
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) // Sana maydoni 'date' bo‘lsa
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
   return (
@@ -37,7 +38,7 @@ const HomePage = () => {
       <section
         className="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-r from-blue-900 to-blue-700 text-white relative overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/1367157/pexels-photo-1367157.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')`,
+          backgroundImage: `url('https://uzbekistan.travel/storage/app/media/Rasmlar/Buxoro/cropped-images/img5021-2-0-0-0-0-1738296828.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -52,24 +53,24 @@ const HomePage = () => {
               {t('welcomeSubtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
-              <Link to="/department/electricity">
+              {/* <Link to="/department">
                 <Button size="lg" variant="primary">
                   {t('viewDepartments')}
                 </Button>
-              </Link>
-              <Link to="/contact">
+              </Link> */}
+              {/* <Link to="/contact">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   {t('contact')}
                 </Button>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
 
         {/* Wave decoration */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" className="w-full">
-            <path fill="#ffffff" fillOpacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
+          <svg xmlns="" viewBox="0 0 1440 100" className="w-full">
+            <path fill="#ffffff" fillOpacity="" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,100L1360,100C1280,100,1120,100,960,100C800,100,640,100,480,100C320,100,160,100,80,100L0,100Z"></path>
           </svg>
         </div>
       </section>
